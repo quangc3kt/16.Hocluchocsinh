@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Xếp hạng học lực của học sinh dựa trên các bài kiểm tra, điểm giữa kì và điểm cuối kì</h3>
+<input type="number" id="a" placeholder="Nhập điểm giữa kì">
+<input type="number" id="b" placeholder="Nhập số điểm cuối kì">
+<button onclick="kq()">Kết quả</button>
+<p id="kq"></p>
+</body>
+<script>
+    function kq() {
+        let gk = +document.getElementById('a').value;
+        let ck = +document.getElementById('b').value;
+        let diem = (gk * 0.4 + ck * 0.6)
+        if (diem < 5) {
+            document.getElementById('kq').innerHTML = 'Yếu';
+        }
+        if (diem > 5 && diem < 8) {
+            document.getElementById('kq').innerHTML = 'Khá';
+        }
+        if (diem > 8 && diem <9) {
+            document.getElementById('kq').innerHTML = 'Giỏi';
+        }
+        if (diem > 9) {
+            document.getElementById('kq').innerHTML = 'Xuất sắc';
+        }
+    }
+</script>
+</html>
